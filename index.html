@@ -6,8 +6,12 @@
     <title>پادکست مانا | Mana Cast</title>
     <meta
       name="description"
-      content="پادکست مانا؛ فضایی برای گفتگو درباره توسعه فردی، تکنولوژی و رشد حرفهای."
+      content="پادکست مانا؛ محلی برای آموزش، رشد فردی، تکنولوژی و کسب‌وکار. با ما از تجربه‌های واقعی و راهکارهای عملی در مسیر موفقیت آشنا شوید."
     />
+    <meta name="keywords" content="پادکست، مانا، رشد فردی، تکنولوژی، کسب‌وکار، مشاوره" />
+    <meta property="og:title" content="پادکست مانا | Mana Cast" />
+    <meta property="og:description" content="گفت‌وگوهای کاربردی درباره رشد فردی، تکنولوژی و کسب‌وکار." />
+    <meta property="og:type" content="website" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -18,40 +22,46 @@
               sans: ['Vazirmatn', 'sans-serif'],
             },
             boxShadow: {
-              glow: '0 20px 50px rgba(79, 70, 229, 0.28)',
+              glow: '0 20px 50px rgba(79, 70, 229, 0.25)',
+            },
+            colors: {
+              brand: {
+                50: '#f5f3ff',
+                100: '#ede9fe',
+                500: '#7c3aed',
+                600: '#6d28d9',
+                700: '#5b21b6',
+              },
             },
           },
         },
       };
     </script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;700;800&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="assets/styles.css" />
   </head>
-  <body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100 transition-colors duration-300 min-h-screen flex flex-col">
+  <body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-300">
     <header class="sticky top-0 z-50 glass-effect border-b border-slate-200 dark:border-slate-800">
-      <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
         <a href="#home" class="flex items-center gap-3" aria-label="خانه">
-          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-purple-600 to-indigo-500 flex items-center justify-center text-white shadow-md">
+          <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-purple-600 to-indigo-500 flex items-center justify-center text-white shadow-lg shadow-purple-500/20">
             <i class="fa-solid fa-podcast"></i>
           </div>
           <div>
-            <span class="font-extrabold text-lg tracking-tight bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">پادکست مانا</span>
-            <span class="block text-xs text-slate-400 -mt-1">Mana Cast</span>
+            <span class="block font-extrabold text-lg tracking-tight bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">پادکست مانا</span>
+            <span class="block text-[10px] text-slate-400 -mt-1">Mana Cast</span>
           </div>
         </a>
 
-        <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-600 dark:text-slate-300">
-          <a href="#home" class="hover:text-indigo-600 transition">خانه</a>
-          <a href="#episodes" class="hover:text-indigo-600 transition">قسمت‌ها</a>
-          <a href="#about" class="hover:text-indigo-600 transition">درباره ما</a>
-          <a href="#subscribe" class="hover:text-indigo-600 transition">عضویت</a>
+        <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-slate-600 dark:text-slate-300">
+          <a href="#home" class="nav-link active">خانه</a>
+          <a href="#services" class="nav-link">خدمات</a>
+          <a href="#results" class="nav-link">دستاوردها</a>
+          <a href="#episodes" class="nav-link">قسمت‌ها</a>
+          <a href="#pricing" class="nav-link">قیمت‌ها</a>
+          <a href="#faq" class="nav-link">سوالات</a>
+          <a href="#contact" class="nav-link">تماس</a>
         </nav>
 
         <div class="flex items-center gap-3">
@@ -60,64 +70,72 @@
             <i class="fa-solid fa-sun hidden dark:block text-yellow-400"></i>
           </button>
 
-          <a href="#episodes" class="hidden sm:inline-flex px-4 py-2 text-sm font-semibold rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white transition shadow-sm">
-            گوش دادن
+          <a href="#contact" class="hidden sm:inline-flex px-4 py-2 text-sm font-semibold rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white transition shadow-md">
+            شروع همکاری
           </a>
         </div>
       </div>
     </header>
 
-    <main id="home" class="flex-1">
+    <main id="home">
       <section class="relative py-12 md:py-20 overflow-hidden">
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(168,85,247,0.20),_transparent_35%),radial-gradient(circle_at_bottom_right,_rgba(99,102,241,0.20),_transparent_35%)]"></div>
-        <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-10 items-center relative z-10">
-          <div class="space-y-6 text-center md:text-right">
-            <span class="inline-block px-3 py-1 text-xs font-semibold text-purple-600 dark:text-purple-400 bg-purple-100 dark:bg-purple-950/50 rounded-full border border-purple-200 dark:border-purple-800">
-              🎙️ فصل جدید منتشر شد
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(168,85,247,0.18),_transparent_35%),radial-gradient(circle_at_bottom_right,_rgba(99,102,241,0.18),_transparent_35%)]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
+          <div class="space-y-7 text-center lg:text-right">
+            <span class="inline-flex items-center gap-2 px-3 py-1.5 text-xs font-semibold text-purple-700 dark:text-purple-300 bg-purple-100 dark:bg-purple-950/60 rounded-full border border-purple-200 dark:border-purple-800">
+              <i class="fa-solid fa-broadcast-tower"></i>
+              جدیدترین فصل منتشر شد
             </span>
 
-            <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight">
-              گفتگو درباره <span class="bg-gradient-to-r from-purple-600 to-indigo-500 bg-clip-text text-transparent">توسعه فردی، تکنولوژی</span> و زندگی
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.1] tracking-tight">
+              رشد فردی، تکنولوژی و کسب‌وکار با صدای <span class="text-gradient">مانا</span>
             </h1>
 
-            <p class="text-slate-600 dark:text-slate-300 text-base sm:text-lg leading-relaxed">
-              در پادکست مانا، داستان‌ها و تجربه‌های متفاوت را مرور می‌کنیم تا مسیر رشد فردی و حرفه‌ای روشن‌تر شود.
+            <p class="text-lg text-slate-600 dark:text-slate-300 leading-relaxed max-w-xl mx-auto lg:mx-0">
+              از تجربه‌های واقعی تا راهکارهای عملی، در پادکست مانا یاد می‌گیریم چطور با آگاهی بیشتر، تصمیم‌های بهتری بگیریم و کسب‌وکار خود را رشد دهیم.
             </p>
 
-            <div class="pt-2 flex flex-wrap gap-3 justify-center md:justify-start">
-              <a href="#episodes" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-medium transition shadow-glow">
+            <div class="flex flex-wrap justify-center lg:justify-start gap-3 pt-2">
+              <a href="#episodes" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-medium transition shadow-glow">
                 <i class="fa-solid fa-play"></i>
-                <span>شروع گوش دادن</span>
+                <span>گوش دادن</span>
               </a>
-
-              <a href="#subscribe" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-200 dark:bg-slate-800 hover:bg-purple-100 dark:hover:bg-purple-900/30 transition text-sm font-medium">
-                <i class="fa-solid fa-bell"></i>
-                <span>عضویت در خبرنامه</span>
+              <a href="#contact" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-slate-200 dark:bg-slate-800 hover:bg-purple-100 dark:hover:bg-purple-900/30 transition font-medium">
+                <i class="fa-solid fa-rocket"></i>
+                <span>شروع همکاری</span>
               </a>
             </div>
 
-            <div class="flex flex-wrap items-center justify-center md:justify-start gap-6 pt-4 text-sm text-slate-500 dark:text-slate-400">
+            <div class="flex flex-wrap justify-center lg:justify-start gap-8 pt-4 text-sm text-slate-500 dark:text-slate-400">
               <div>
-                <span class="block text-2xl font-bold text-slate-800 dark:text-white">۱۲+</span>
-                <span>قسمت منتشرشده</span>
+                <div class="text-3xl font-extrabold text-slate-900 dark:text-white">۱۲+</div>
+                <div>قسمت منتشرشده</div>
               </div>
               <div>
-                <span class="block text-2xl font-bold text-slate-800 dark:text-white">۲۵k</span>
-                <span>شنونده فعال</span>
+                <div class="text-3xl font-extrabold text-slate-900 dark:text-white">۲۵k</div>
+                <div>شنونده فعال</div>
               </div>
               <div>
-                <span class="block text-2xl font-bold text-slate-800 dark:text-white">۴.۹</span>
-                <span>امتیاز کاربران</span>
+                <div class="text-3xl font-extrabold text-slate-900 dark:text-white">۴.۹</div>
+                <div>امتیاز کاربران</div>
               </div>
             </div>
           </div>
 
-          <div class="flex justify-center">
-            <div class="relative w-64 h-64 sm:w-80 sm:h-80 rounded-[2rem] bg-gradient-to-tr from-purple-600 to-indigo-600 p-2 shadow-glow transform rotate-1 hover:rotate-0 transition duration-300">
-              <div class="w-full h-full bg-slate-900 rounded-[1.5rem] flex flex-col justify-center items-center text-white p-6 text-center border border-white/10">
-                <i class="fa-solid fa-microphone-lines text-6xl text-purple-400 mb-4 animate-pulse"></i>
-                <h2 class="text-2xl font-bold">MANA CAST</h2>
-                <p class="text-xs text-slate-400 mt-2">شنیدنی‌های عمیق و کاربردی</p>
+          <div class="relative flex justify-center items-center">
+            <div class="absolute -top-8 -right-8 w-36 h-36 bg-purple-200/50 dark:bg-purple-500/10 rounded-full blur-3xl"></div>
+            <div class="absolute -bottom-8 -left-8 w-36 h-36 bg-indigo-200/50 dark:bg-indigo-500/10 rounded-full blur-3xl"></div>
+
+            <div class="relative w-[300px] h-[300px] sm:w-[380px] sm:h-[380px] rounded-[2rem] bg-gradient-to-tr from-purple-600 via-indigo-600 to-violet-700 p-2 shadow-glow rotate-1 hover:rotate-0 transition duration-500">
+              <div class="w-full h-full bg-slate-900 rounded-[1.5rem] flex flex-col items-center justify-center text-center p-8 border border-white/10">
+                <i class="fa-solid fa-microphone-lines text-6xl sm:text-7xl text-purple-400 mb-5 animate-pulse"></i>
+                <div class="text-2xl sm:text-3xl font-black tracking-widest">MANA CAST</div>
+                <p class="text-xs sm:text-sm text-slate-300 mt-3">شنیدنی‌های عمیق، کاربردی و الهام‌بخش</p>
+                <div class="mt-6 flex gap-2">
+                  <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-purple-400"></span>
+                </div>
               </div>
             </div>
           </div>
@@ -125,15 +143,15 @@
       </section>
 
       <section class="py-12">
-        <div class="max-w-6xl mx-auto px-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div class="feature-card rounded-2xl p-6">
               <div class="icon-box bg-purple-100 text-purple-600 dark:bg-purple-950/60 dark:text-purple-300">
                 <i class="fa-solid fa-brain"></i>
               </div>
               <h3 class="text-xl font-bold mt-5">توسعه فردی</h3>
-              <p class="text-slate-600 dark:text-slate-300 mt-2">
-                بررسی راهکارهای عملی برای بهبود عادات، تمرکز، و تصمیم‌گیری‌های بهتر روزانه.
+              <p class="text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">
+                آموزش‌های کاربردی برای افزایش تمرکز، عادات بهتر و تصمیم‌گیری‌های دقیق‌تر در زندگی و کار.
               </p>
             </div>
 
@@ -142,207 +160,353 @@
                 <i class="fa-solid fa-robot"></i>
               </div>
               <h3 class="text-xl font-bold mt-5">تکنولوژی</h3>
-              <p class="text-slate-600 dark:text-slate-300 mt-2">
-                فهم بهتر از ابزارهای هوش مصنوعی و نقش آن‌ها در آینده مشاغل و سبک زندگی.
+              <p class="text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">
+                تحلیل واقع‌بینانه درباره هوش مصنوعی، ابزارهای دیجیتال و مسیر آینده مشاغل خلاقانه.
               </p>
             </div>
 
             <div class="feature-card rounded-2xl p-6">
               <div class="icon-box bg-amber-100 text-amber-600 dark:bg-amber-950/60 dark:text-amber-300">
-                <i class="fa-solid fa-heart"></i>
+                <i class="fa-solid fa-chart-line"></i>
               </div>
-              <h3 class="text-xl font-bold mt-5">زندگی</h3>
-              <p class="text-slate-600 dark:text-slate-300 mt-2">
-                مصاحبه با افراد موفق، تجربه‌های واقعی و درس‌هایی که در زندگی کاربرد دارند.
+              <h3 class="text-xl font-bold mt-5">کسب‌وکار</h3>
+              <p class="text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">
+                ایده‌های قابل اجرا برای ساخت محصول، رشد برند، تعامل با مشتری و افزایش فروش در بازار رقابتی.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="episodes" class="py-12 bg-slate-100/60 dark:bg-slate-800/40">
-        <div class="max-w-6xl mx-auto px-4">
-          <div class="flex justify-between items-end mb-8">
-            <div>
-              <h2 class="text-2xl font-bold">آخرین قسمت‌ها</h2>
-              <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">جدیدترین اپیزودهای منتشر شده</p>
-            </div>
-            <a href="#subscribe" class="hidden sm:inline-flex text-indigo-600 dark:text-indigo-300 font-medium">
-              دنبال‌کردن همه قسمت‌ها
-            </a>
+      <section id="services" class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="section-heading mb-10 text-center">
+            <span class="section-tag">خدم��ت مانا</span>
+            <h2 class="mt-4 text-3xl font-extrabold">از یک ایده ساده تا یک برند قدرتمند</h2>
           </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="episode-card rounded-2xl p-5 flex flex-col justify-between">
-              <div>
-                <div class="flex justify-between items-center text-xs text-slate-400 mb-3">
-                  <span>قسمت ۱۲</span>
-                  <span>۴۵ دقیقه</span>
-                </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+            <div class="service-card rounded-3xl p-6">
+              <div class="service-icon"><i class="fa-solid fa-microphone-lines"></i></div>
+              <h3 class="text-xl font-bold mt-5">تولید پادکست</h3>
+              <p class="mt-3 text-slate-600 dark:text-slate-300 leading-relaxed">ساخت محتوای صوتی حرفه‌ای برای برند، آموزش و معرفی خدمات شما به مخاطبان هدف.</p>
+            </div>
 
-                <h3 class="font-bold text-lg mb-2 hover:text-indigo-600 transition cursor-pointer">
-                  چگونه عادات روزانه کارآمد بسازیم؟
-                </h3>
+            <div class="service-card rounded-3xl p-6">
+              <div class="service-icon"><i class="fa-solid fa-pen-fancy"></i></div>
+              <h3 class="text-xl font-bold mt-5">برنامه‌ریزی محتوا</h3>
+              <p class="mt-3 text-slate-600 dark:text-slate-300 leading-relaxed">طراحی محتوای آموزشی و برندینگ برای افزایش ترافیک، اعتماد و تبدیل مخاطب به مشتری.</p>
+            </div>
 
-                <p class="text-slate-600 dark:text-slate-300 text-sm line-clamp-3 mb-4">
-                  در این قسمت به بررسی راهکارهای عملی برای ایجاد روتین‌های ماندگار، حذف عادت‌های مخرب و ساختن یک روز مؤثرتر می‌پردازیم.
-                </p>
-              </div>
+            <div class="service-card rounded-3xl p-6">
+              <div class="service-icon"><i class="fa-solid fa-user-tie"></i></div>
+              <h3 class="text-xl font-bold mt-5">مشاوره برندینگ</h3>
+              <p class="mt-3 text-slate-600 dark:text-slate-300 leading-relaxed">مشاوره برای ساخت هویت برند، پیام اصلی و استراتژی رشد پایدار در بازار ایران و فراتر از آن.</p>
+            </div>
 
-              <button
-                onclick="playAudio('قسمت ۱۲: عادات روزانه', 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3')"
-                class="w-full py-2.5 px-4 rounded-xl bg-indigo-50 dark:bg-slate-700/50 hover:bg-indigo-600 hover:text-white text-indigo-600 dark:text-indigo-300 font-semibold text-sm transition flex items-center justify-center gap-2"
-              >
+            <div class="service-card rounded-3xl p-6">
+              <div class="service-icon"><i class="fa-solid fa-chart-pie"></i></div>
+              <h3 class="text-xl font-bold mt-5">تحلیل و رشد</h3>
+              <p class="mt-3 text-slate-600 dark:text-slate-300 leading-relaxed">بررسی معیارهای رشد، رفتار مخاطب و تحلیل محتوا برای تصمیم‌گیری بهتر در کسب‌وکار.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="results" class="py-16 bg-slate-100/70 dark:bg-slate-900/70">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="section-heading mb-10 text-center">
+            <span class="section-tag">نتایج ما</span>
+            <h2 class="mt-4 text-3xl font-extrabold">به‌خاطر تجربه، مخاطب و رشد</h2>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="stat-box rounded-3xl p-6">
+              <div class="stat-number" data-number="25000">۲۵k</div>
+              <div class="stat-label">شنونده فعال</div>
+            </div>
+            <div class="stat-box rounded-3xl p-6">
+              <div class="stat-number" data-number="120">۱۲۰+</div>
+              <div class="stat-label">محتوای منتشرشده</div>
+            </div>
+            <div class="stat-box rounded-3xl p-6">
+              <div class="stat-number" data-number="90">۹۰%</div>
+              <div class="stat-label">رضایت مخاطبان</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="episodes" class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex justify-between items-end mb-8">
+            <div class="section-heading text-right">
+              <span class="section-tag">آخرین قسمت‌ها</span>
+              <h2 class="mt-4 text-3xl font-extrabold">پیشنهادهای شنیدنی برای رشد</h2>
+            </div>
+            <a href="#contact" class="hidden sm:inline-flex text-indigo-600 dark:text-indigo-300 font-medium">درخواست همکاری</a>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+            <div class="episode-card rounded-2xl p-5">
+              <span class="episode-badge">قسمت ۱۲</span>
+              <h3 class="mt-4 text-xl font-bold">عادات مؤثر و روتین‌سازی</h3>
+              <p class="mt-3 text-slate-600 dark:text-slate-300 leading-relaxed">چطور با روتین درست و بدون فشار، روزهای مؤثرتر و آرام‌تری بسازیم؟</p>
+              <button onclick="playAudio('قسمت ۱۲: عادات مؤثر', 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3')" class="mt-5 inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-indigo-50 dark:bg-slate-700/50 hover:bg-indigo-600 hover:text-white text-indigo-600 dark:text-indigo-300 transition">
                 <i class="fa-solid fa-play"></i>
-                <span>پخش این قسمت</span>
+                پخش
               </button>
             </div>
 
-            <div class="episode-card rounded-2xl p-5 flex flex-col justify-between">
-              <div>
-                <div class="flex justify-between items-center text-xs text-slate-400 mb-3">
-                  <span>قسمت ۱۱</span>
-                  <span>۳۸ دقیقه</span>
-                </div>
-
-                <h3 class="font-bold text-lg mb-2 hover:text-indigo-600 transition cursor-pointer">
-                  تکنولوژی و آینده مشاغل خلاقانه
-                </h3>
-
-                <p class="text-slate-600 dark:text-slate-300 text-sm line-clamp-3 mb-4">
-                  هوش مصنوعی چطور ابزارهای کاری ما را تغییر می‌دهد و چگونه باید خود را با این تحولات هماهنگ کنیم؟
-                </p>
-              </div>
-
-              <button
-                onclick="playAudio('قسمت ۱۱: تکنولوژی و آیند�� مشاغل', 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3')"
-                class="w-full py-2.5 px-4 rounded-xl bg-indigo-50 dark:bg-slate-700/50 hover:bg-indigo-600 hover:text-white text-indigo-600 dark:text-indigo-300 font-semibold text-sm transition flex items-center justify-center gap-2"
-              >
+            <div class="episode-card rounded-2xl p-5">
+              <span class="episode-badge">قسمت ۱۱</span>
+              <h3 class="mt-4 text-xl font-bold">تکنولوژی و آینده کار</h3>
+              <p class="mt-3 text-slate-600 dark:text-slate-300 leading-relaxed">هوش مصنوعی، ابزارهای دیجیتال و مسیر مشاغل خلاقانه در سال‌های آینده.</p>
+              <button onclick="playAudio('قسمت ۱۱: تکنولوژی و آینده کار', 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3')" class="mt-5 inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-indigo-50 dark:bg-slate-700/50 hover:bg-indigo-600 hover:text-white text-indigo-600 dark:text-indigo-300 transition">
                 <i class="fa-solid fa-play"></i>
-                <span>پخش این قسمت</span>
+                پخش
               </button>
             </div>
 
-            <div class="episode-card rounded-2xl p-5 flex flex-col justify-between">
-              <div>
-                <div class="flex justify-between items-center text-xs text-slate-400 mb-3">
-                  <span>قسمت ۱۰</span>
-                  <span>۴۲ دقیقه</span>
-                </div>
-
-                <h3 class="font-bold text-lg mb-2 hover:text-indigo-600 transition cursor-pointer">
-                  راهی برای تمرکز و کاهش آشفتگی ذهنی
-                </h3>
-
-                <p class="text-slate-600 dark:text-slate-300 text-sm line-clamp-3 mb-4">
-                  تمرکز در دنیای پرهیاهو چقدر اهمیت دارد؟ در این قسمت درباره ابزارهای ساده برای کاهش آشفتگی و افزایش بهره‌وری صحبت می‌کنیم.
-                </p>
-              </div>
-
-              <button
-                onclick="playAudio('قسمت ۱۰: تمرکز و کاهش آشفتگی ذهنی', 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3')"
-                class="w-full py-2.5 px-4 rounded-xl bg-indigo-50 dark:bg-slate-700/50 hover:bg-indigo-600 hover:text-white text-indigo-600 dark:text-indigo-300 font-semibold text-sm transition flex items-center justify-center gap-2"
-              >
+            <div class="episode-card rounded-2xl p-5">
+              <span class="episode-badge">قسمت ۱۰</span>
+              <h3 class="mt-4 text-xl font-bold">تمرکز و کاهش آشفتگی</h3>
+              <p class="mt-3 text-slate-600 dark:text-slate-300 leading-relaxed">رفع پراکندگی ذهنی و تمرکز بیشتر برای کار و زندگی با ابزارهای ساده.</p>
+              <button onclick="playAudio('قسمت ۱۰: تمرکز و کاهش آشفتگی', 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3')" class="mt-5 inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-indigo-50 dark:bg-slate-700/50 hover:bg-indigo-600 hover:text-white text-indigo-600 dark:text-indigo-300 transition">
                 <i class="fa-solid fa-play"></i>
-                <span>پخش این قسمت</span>
+                پخش
               </button>
             </div>
 
-            <div class="episode-card rounded-2xl p-5 flex flex-col justify-between">
-              <div>
-                <div class="flex justify-between items-center text-xs text-slate-400 mb-3">
-                  <span>قسمت ۹</span>
-                  <span>۳۶ دقیقه</span>
-                </div>
-
-                <h3 class="font-bold text-lg mb-2 hover:text-indigo-600 transition cursor-pointer">
-                  چطور با انتخاب درست اولویت‌ها، زندگی را بهتر مدیریت کنیم؟
-                </h3>
-
-                <p class="text-slate-600 dark:text-slate-300 text-sm line-clamp-3 mb-4">
-                  در این قسمت درباره اهمیت اولویت‌بندی، تمرکز روی کارهای مهم و کاهش فشارهای ذهنی صحبت می‌کنیم.
-                </p>
-              </div>
-
-              <button
-                onclick="playAudio('قسمت ۹: اولویت‌بندی و مدیریت زمان', 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3')"
-                class="w-full py-2.5 px-4 rounded-xl bg-indigo-50 dark:bg-slate-700/50 hover:bg-indigo-600 hover:text-white text-indigo-600 dark:text-indigo-300 font-semibold text-sm transition flex items-center justify-center gap-2"
-              >
+            <div class="episode-card rounded-2xl p-5">
+              <span class="episode-badge">قسمت ۹</span>
+              <h3 class="mt-4 text-xl font-bold">اولویت‌بندی و مدیریت زمان</h3>
+              <p class="mt-3 text-slate-600 dark:text-slate-300 leading-relaxed">چه چیزهایی را باید حذف کنیم تا زمان، انرژی و تمرکزمان بهتر مصرف شود.</p>
+              <button onclick="playAudio('قسمت ۹: مدیریت زمان', 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3')" class="mt-5 inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-indigo-50 dark:bg-slate-700/50 hover:bg-indigo-600 hover:text-white text-indigo-600 dark:text-indigo-300 transition">
                 <i class="fa-solid fa-play"></i>
-                <span>پخش این قسمت</span>
+                پخش
               </button>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="about" class="py-16">
-        <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-          <div>
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-100 dark:bg-purple-950/50 text-purple-700 dark:text-purple-300 text-xs font-medium border border-purple-200 dark:border-purple-800">
-              <i class="fa-solid fa-circle-play"></i>
-              درباره مانا
+      <section id="pricing" class="py-16 bg-gradient-to-b from-slate-50 to-indigo-50 dark:from-slate-950 dark:to-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="section-heading mb-10 text-center">
+            <span class="section-tag">پکیج‌ها</span>
+            <h2 class="mt-4 text-3xl font-extrabold">برای شروع یا رشد برند شما</h2>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div class="price-card rounded-3xl p-8">
+              <p class="text-sm text-slate-500 dark:text-slate-400">پکیج شروع</p>
+              <h3 class="mt-3 text-3xl font-extrabold">۲,۵۰۰,۰۰۰</h3>
+              <p class="text-slate-500 dark:text-slate-400 mt-2">تومان</p>
+              <ul class="mt-6 space-y-3 text-sm text-slate-600 dark:text-slate-300">
+                <li><i class="fa-solid fa-check text-green-500 ml-2"></i>طراحی محتوای پایه</li>
+                <li><i class="fa-solid fa-check text-green-500 ml-2"></i>۲ قسمت پادکست</li>
+                <li><i class="fa-solid fa-check text-green-500 ml-2"></i>استراتژی محتوایی ساده</li>
+              </ul>
+              <button class="mt-8 w-full py-3 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition font-medium">انتخاب پکیج</button>
             </div>
-            <h2 class="mt-4 text-3xl font-extrabold leading-tight">پادکستی برای کسانی که می‌خواهند بهتر زندگی کنند</h2>
-            <p class="mt-4 text-slate-600 dark:text-slate-300 leading-relaxed">
-              مانا به‌عنوان یک پادکست، فضایی برای گفت‌وگوهای عمیق، تجربه‌های واقعی و ایده‌های کاربردی است. ما به دنبال این هستیم که با شنیدن و بحث درباره موضوعات مهم، ذهن‌ها را رشد دهیم و مسیر زندگی بهتر را برای شنوندگان روشن کنیم.
-            </p>
-            <div class="mt-6 flex flex-wrap gap-3">
-              <a href="#subscribe" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white transition">
-                <i class="fa-solid fa-envelope"></i>
-                <span>عضویت در خبرنامه</span>
-              </a>
-              <a href="#" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-200 dark:bg-slate-800 hover:bg-purple-100 dark:hover:bg-purple-900/30 transition">
-                <i class="fa-brands fa-spotify"></i>
-                <span>اسپاتیفای</span>
-              </a>
+
+            <div class="price-card featured rounded-3xl p-8 relative overflow-hidden">
+              <div class="absolute top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-amber-400 text-xs font-bold text-slate-900">پیشنهادی</div>
+              <p class="text-sm text-indigo-100">پکیج رشد</p>
+              <h3 class="mt-5 text-3xl font-extrabold">۵,۵۰۰,۰۰۰</h3>
+              <p class="text-indigo-100 mt-2">تومان</p>
+              <ul class="mt-6 space-y-3 text-sm text-white/90">
+                <li><i class="fa-solid fa-check text-green-300 ml-2"></i>ساخت برند و استراتژی محتوا</li>
+                <li><i class="fa-solid fa-check text-green-300 ml-2"></i>۴ قسمت پادکست</li>
+                <li><i class="fa-solid fa-check text-green-300 ml-2"></i>تحلیل و بهینه‌سازی محتوا</li>
+                <li><i class="fa-solid fa-check text-green-300 ml-2"></i>مشاوره ماهانه</li>
+              </ul>
+              <button class="mt-8 w-full py-3 rounded-xl bg-white text-indigo-700 font-bold hover:bg-slate-100 transition">انتخاب پکیج</button>
+            </div>
+
+            <div class="price-card rounded-3xl p-8">
+              <p class="text-sm text-slate-500 dark:text-slate-400">پکیج حرفه‌ای</p>
+              <h3 class="mt-3 text-3xl font-extrabold">۸,۵۰۰,۰۰۰</h3>
+              <p class="text-slate-500 dark:text-slate-400 mt-2">تومان</p>
+              <ul class="mt-6 space-y-3 text-sm text-slate-600 dark:text-slate-300">
+                <li><i class="fa-solid fa-check text-green-500 ml-2"></i>برندینگ کامل</li>
+                <li><i class="fa-solid fa-check text-green-500 ml-2"></i>تولید پادکست و محتوا</li>
+                <li><i class="fa-solid fa-check text-green-500 ml-2"></i>تحلیل KPI و رشد پایدار</li>
+                <li><i class="fa-solid fa-check text-green-500 ml-2"></i>پشتیبانی ویژه</li>
+              </ul>
+              <button class="mt-8 w-full py-3 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition font-medium">انتخاب پکیج</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="section-heading mb-10 text-center">
+            <span class="section-tag">نظرات</span>
+            <h2 class="mt-4 text-3xl font-extrabold">آنچه شنوندگان می‌گویند</h2>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div class="testimonial-card rounded-3xl p-6">
+              <div class="flex items-center gap-2 text-amber-400">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+              <p class="mt-4 text-slate-600 dark:text-slate-300 leading-relaxed">«بعد از گوش دادن به پادکست مانا، توانستم تمرکز بیشتری روی کسب‌وکار خود داشته باشم و تصمیمات بهتری بگیرم.»</p>
+              <div class="mt-6 flex items-center gap-3">
+                <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-purple-600 to-indigo-500 flex items-center justify-center text-white font-bold">ن</div>
+                <div>
+                  <div class="font-bold">نیلوفر</div>
+                  <div class="text-sm text-slate-500 dark:text-slate-400">مالک کسب‌وکار</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="testimonial-card rounded-3xl p-6">
+              <div class="flex items-center gap-2 text-amber-400">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+              <p class="mt-4 text-slate-600 dark:text-slate-300 leading-relaxed">«محتوای مانا خیلی کاربردی و واقع‌گرایانه است. هم برای رشد فردی و هم برای توسعه کسب‌وکار من بسیار ارزشمند بود.»</p>
+              <div class="mt-6 flex items-center gap-3">
+                <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-pink-500 to-violet-500 flex items-center justify-center text-white font-bold">ع</div>
+                <div>
+                  <div class="font-bold">علی</div>
+                  <div class="text-sm text-slate-500 dark:text-slate-400">کارآفرین</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="testimonial-card rounded-3xl p-6">
+              <div class="flex items-center gap-2 text-amber-400">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+              <p class="mt-4 text-slate-600 dark:text-slate-300 leading-relaxed">«در کنار محتوای کیفیت بالا، حس ارتباط واقعی با مخاطب را هم دارد. برای برند من یک تجربه بسیار مثبت بوده است.»</p>
+              <div class="mt-6 flex items-center gap-3">
+                <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-emerald-500 to-teal-500 flex items-center justify-center text-white font-bold">م</div>
+                <div>
+                  <div class="font-bold">مینا</div>
+                  <div class="text-sm text-slate-500 dark:text-slate-400">مدیر برند</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" class="py-16 bg-slate-100/70 dark:bg-slate-900/60">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="section-heading mb-10 text-center">
+            <span class="section-tag">سوالات متداول</span>
+            <h2 class="mt-4 text-3xl font-extrabold">پاسخ‌هایی که باید بدانید</h2>
+          </div>
+
+          <div class="faq-list space-y-4">
+            <div class="faq-item rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800">
+              <button class="faq-question w-full flex justify-between items-center px-5 py-4 text-right font-medium">
+                <span>آیا برای شروع همکاری نیاز به بودجه زیاد است؟</span>
+                <i class="fa-solid fa-chevron-down text-sm"></i>
+              </button>
+              <div class="faq-answer px-5 pb-4 text-slate-600 dark:text-slate-300">
+                خیر. بسته به اهداف و سطح نیاز شما، می‌توانیم با پکیج‌های مختلف از سطح پایه تا حرفه‌ای شروع کنیم و با کمترین هزینه بیشترین بازده را تجربه کنید.
+              </div>
+            </div>
+
+            <div class="faq-item rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800">
+              <button class="faq-question w-full flex justify-between items-center px-5 py-4 text-right font-medium">
+                <span>آیا پادکست مانا فقط برای افراد خاصی مناسب است؟</span>
+                <i class="fa-solid fa-chevron-down text-sm"></i>
+              </button>
+              <div class="faq-answer px-5 pb-4 text-slate-600 dark:text-slate-300">
+                نه، محتوای مانا برای افراد درگیر در رشد فردی، کسب‌وکار، فناوری و افرادی که می‌خواهند با ذهنی بازتر و تصمیم‌های روشن‌تر زندگی کنند، بسیار مناسب است.
+              </div>
+            </div>
+
+            <div class="faq-item rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800">
+              <button class="faq-question w-full flex justify-between items-center px-5 py-4 text-right font-medium">
+                <span>آیا می‌توانم با برند خودم همکاری کنم؟</span>
+                <i class="fa-solid fa-chevron-down text-sm"></i>
+              </button>
+              <div class="faq-answer px-5 pb-4 text-slate-600 dark:text-slate-300">
+                بله. ما می‌توانیم برای برند شما، محتوای ویژه، پادکست، معرفی خدمات و حتی ساخت کمپین‌های کوتاه‌مدت و بلندمدت طراحی کنیم.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+          <div>
+            <div class="section-heading text-right">
+              <span class="section-tag">تماس</span>
+              <h2 class="mt-4 text-3xl font-extrabold">برای شروع پروژه آماده‌ای؟</h2>
+            </div>
+
+            <div class="mt-6 space-y-4 text-slate-600 dark:text-slate-300">
+              <div class="contact-item rounded-2xl p-4">
+                <div class="flex items-center gap-3">
+                  <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+                  <div>
+                    <div class="font-bold text-slate-800 dark:text-white">تلفن</div>
+                    <div>+۹۸ ۹۱۲ ۳۴۵ ۶۷۸۹</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="contact-item rounded-2xl p-4">
+                <div class="flex items-center gap-3">
+                  <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+                  <div>
+                    <div class="font-bold text-slate-800 dark:text-white">ایمیل</div>
+                    <div>hello@manacast.ir</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="contact-item rounded-2xl p-4">
+                <div class="flex items-center gap-3">
+                  <div class="contact-icon"><i class="fa-brands fa-whatsapp"></i></div>
+                  <div>
+                    <div class="font-bold text-slate-800 dark:text-white">واتساپ</div>
+                    <div>+۹۸ ۹۱۲ ۳۴۵ ۶۷۸۹</div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
           <div class="rounded-3xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6 shadow-sm">
-            <div class="space-y-4">
-              <div class="flex items-center gap-3">
-                <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-purple-600 to-indigo-500 flex items-center justify-center text-white">
-                  <i class="fa-solid fa-quote-left"></i>
-                </div>
-                <div>
-                  <p class="font-bold">نقل قول</p>
-                  <p class="text-sm text-slate-500 dark:text-slate-400">از مهم‌ترین درس‌های زندگی</p>
-                </div>
+            <form class="space-y-4" id="contactForm">
+              <div>
+                <label class="block text-sm font-medium mb-2">نام و نام خانوادگی</label>
+                <input type="text" class="form-input" placeholder="نام شما" />
               </div>
 
-              <blockquote class="text-lg leading-relaxed text-slate-700 dark:text-slate-200">
-                «از همان جا که می‌خواهی شروع کنی، باید به‌سمت چیزی که می‌خواهی تبدیل شوی. رشد تنها با شروع واقعی می‌آید.»
-              </blockquote>
-
-              <div class="pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-3 text-sm text-slate-500 dark:text-slate-400">
-                <span><i class="fa-solid fa-microphone-lines ml-1"></i>پادکست</span>
-                <span><i class="fa-solid fa-users ml-1"></i>مهمانان رو در رو</span>
-                <span><i class="fa-solid fa-star ml-1"></i>محتوای آموزشی</span>
+              <div>
+                <label class="block text-sm font-medium mb-2">ایمیل</label>
+                <input type="email" class="form-input" placeholder="example@email.com" />
               </div>
-            </div>
+
+              <div>
+                <label class="block text-sm font-medium mb-2">نوع همکاری</label>
+                <select class="form-input">
+                  <option>انتخاب کنید</option>
+                  <option>تولید پادکست</option>
+                  <option>برندینگ و محتوا</option>
+                  <option>مشاوره کسب‌وکار</option>
+                  <option>دیگر</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium mb-2">پیام شما</label>
+                <textarea class="form-input min-h-[120px]" placeholder="توضیح کوتاه درباره نیاز شما..."></textarea>
+              </div>
+
+              <button type="submit" class="w-full py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-semibold transition">ارسال پیام</button>
+            </form>
           </div>
-        </div>
-      </section>
-
-      <section id="subscribe" class="py-16 bg-gradient-to-r from-purple-600 to-indigo-600 text-white">
-        <div class="max-w-4xl mx-auto px-4 text-center">
-          <p class="text-sm uppercase tracking-[0.2em] text-purple-100">خبرنامه مانا</p>
-          <h2 class="mt-3 text-3xl font-extrabold">برای دریافت جدیدترین قسمت‌ها، عضو شو</h2>
-          <p class="mt-3 text-purple-100 max-w-2xl mx-auto">
-            آخرین خبرها، قسمت‌های جدید و محتوای ویژه را مستقیم در ایمیل خود دریافت کنید.
-          </p>
-
-          <form class="mt-8 flex flex-col sm:flex-row gap-3 max-w-xl mx-auto">
-            <input
-              type="email"
-              placeholder="ایمیل شما"
-              class="flex-1 rounded-xl border border-white/20 bg-white/10 placeholder:text-purple-100 text-white px-4 py-3 outline-none focus:ring-2 focus:ring-white/60"
-            />
-            <button type="submit" class="px-5 py-3 rounded-xl bg-white text-indigo-700 font-bold hover:bg-slate-100 transition">
-              عضویت
-            </button>
-          </form>
         </div>
       </section>
     </main>
@@ -353,7 +517,6 @@
           <div class="w-10 h-10 rounded-lg bg-indigo-600 text-white flex items-center justify-center shrink-0">
             <i class="fa-solid fa-music"></i>
           </div>
-
           <div class="overflow-hidden">
             <p id="playerTitle" class="font-semibold text-sm truncate">در حال پخش...</p>
             <p class="text-xs text-slate-400">پادکست مانا</p>
@@ -366,12 +529,22 @@
       </div>
     </div>
 
-    <footer class="mt-auto py-8 border-t border-slate-200 dark:border-slate-800 text-center text-xs text-slate-500">
-      <div class="max-w-6xl mx-auto px-4">
-        <p>© ۱۴۰۳ - تمامی حقوق برای پادکست مانا محفوظ است.</p>
+    <a href="https://wa.me/989123456789" target="_blank" rel="noopener" class="floating-whatsapp" aria-label="واتساپ">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <footer class="border-t border-slate-200 dark:border-slate-800 py-8">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500 dark:text-slate-400">
+        <p>© ۱۴۰۳ پادکست مانا | Mana Cast</p>
+        <div class="flex items-center gap-4">
+          <a href="#" class="hover:text-indigo-600 transition">اینستاگرام</a>
+          <a href="#" class="hover:text-indigo-600 transition">تلگرام</a>
+          <a href="#" class="hover:text-indigo-600 transition">یوتیوب</a>
+        </div>
       </div>
     </footer>
 
     <script src="assets/script.js"></script>
   </body>
 </html>
+
