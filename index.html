@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>پادکست مانا | Mana Cast</title>
-
+    <meta
+      name="description"
+      content="پادکست مانا؛ فضایی برای گفتگو درباره توسعه فردی، تکنولوژی و رشد حرفهای."
+    />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -14,11 +17,13 @@
             fontFamily: {
               sans: ['Vazirmatn', 'sans-serif'],
             },
+            boxShadow: {
+              glow: '0 20px 50px rgba(79, 70, 229, 0.28)',
+            },
           },
         },
       };
     </script>
-
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -27,28 +32,12 @@
       href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;700;800&display=swap"
       rel="stylesheet"
     />
-
-    <style>
-      body {
-        font-family: 'Vazirmatn', sans-serif;
-      }
-
-      .glass-effect {
-        background: rgba(255, 255, 255, 0.85);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-      }
-
-      .dark .glass-effect {
-        background: rgba(15, 23, 42, 0.85);
-      }
-    </style>
+    <link rel="stylesheet" href="assets/styles.css" />
   </head>
-
   <body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100 transition-colors duration-300 min-h-screen flex flex-col">
     <header class="sticky top-0 z-50 glass-effect border-b border-slate-200 dark:border-slate-800">
       <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
-        <a href="#" class="flex items-center gap-3">
+        <a href="#home" class="flex items-center gap-3" aria-label="خانه">
           <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-purple-600 to-indigo-500 flex items-center justify-center text-white shadow-md">
             <i class="fa-solid fa-podcast"></i>
           </div>
@@ -58,130 +47,305 @@
           </div>
         </a>
 
+        <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-600 dark:text-slate-300">
+          <a href="#home" class="hover:text-indigo-600 transition">خانه</a>
+          <a href="#episodes" class="hover:text-indigo-600 transition">قسمت‌ها</a>
+          <a href="#about" class="hover:text-indigo-600 transition">درباره ما</a>
+          <a href="#subscribe" class="hover:text-indigo-600 transition">عضویت</a>
+        </nav>
+
         <div class="flex items-center gap-3">
-          <button
-            id="themeToggle"
-            aria-label="تغییر تم"
-            class="p-2.5 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition"
-          >
+          <button id="themeToggle" aria-label="تغییر تم" class="p-2.5 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition">
             <i class="fa-solid fa-moon dark:hidden text-slate-600"></i>
             <i class="fa-solid fa-sun hidden dark:block text-yellow-400"></i>
           </button>
 
           <a href="#episodes" class="hidden sm:inline-flex px-4 py-2 text-sm font-semibold rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white transition shadow-sm">
-            قسمت‌ها
+            گوش دادن
           </a>
         </div>
       </div>
     </header>
 
-    <section class="relative py-12 md:py-20 overflow-hidden">
-      <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-        <div class="space-y-6 text-center md:text-right">
-          <span class="inline-block px-3 py-1 text-xs font-semibold text-purple-600 dark:text-purple-400 bg-purple-100 dark:bg-purple-950/50 rounded-full border border-purple-200 dark:border-purple-800">
-            🎙️ فصل جدید منتشر شد
-          </span>
+    <main id="home" class="flex-1">
+      <section class="relative py-12 md:py-20 overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(168,85,247,0.20),_transparent_35%),radial-gradient(circle_at_bottom_right,_rgba(99,102,241,0.20),_transparent_35%)]"></div>
+        <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-10 items-center relative z-10">
+          <div class="space-y-6 text-center md:text-right">
+            <span class="inline-block px-3 py-1 text-xs font-semibold text-purple-600 dark:text-purple-400 bg-purple-100 dark:bg-purple-950/50 rounded-full border border-purple-200 dark:border-purple-800">
+              🎙️ فصل جدید منتشر شد
+            </span>
 
-          <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight">
-            گفتگو درباره <span class="bg-gradient-to-r from-purple-600 to-indigo-500 bg-clip-text text-transparent">توسعه فردی، تکنولوژی</span> و زندگی
-          </h1>
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight">
+              گفتگو درباره <span class="bg-gradient-to-r from-purple-600 to-indigo-500 bg-clip-text text-transparent">توسعه فردی، تکنولوژی</span> و زندگی
+            </h1>
 
-          <p class="text-slate-600 dark:text-slate-300 text-base sm:text-lg leading-relaxed">
-            در پادکست مانا، داستان‌ها و تجربه‌های متفاوت را مرور می‌کنیم تا مسیر رشد فردی و حرفه‌ای روشن‌تر شود.
+            <p class="text-slate-600 dark:text-slate-300 text-base sm:text-lg leading-relaxed">
+              در پادکست مانا، داستان‌ها و تجربه‌های متفاوت را مرور می‌کنیم تا مسیر رشد فردی و حرفه‌ای روشن‌تر شود.
+            </p>
+
+            <div class="pt-2 flex flex-wrap gap-3 justify-center md:justify-start">
+              <a href="#episodes" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-medium transition shadow-glow">
+                <i class="fa-solid fa-play"></i>
+                <span>شروع گوش دادن</span>
+              </a>
+
+              <a href="#subscribe" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-200 dark:bg-slate-800 hover:bg-purple-100 dark:hover:bg-purple-900/30 transition text-sm font-medium">
+                <i class="fa-solid fa-bell"></i>
+                <span>عضویت در خبرنامه</span>
+              </a>
+            </div>
+
+            <div class="flex flex-wrap items-center justify-center md:justify-start gap-6 pt-4 text-sm text-slate-500 dark:text-slate-400">
+              <div>
+                <span class="block text-2xl font-bold text-slate-800 dark:text-white">۱۲+</span>
+                <span>قسمت منتشرشده</span>
+              </div>
+              <div>
+                <span class="block text-2xl font-bold text-slate-800 dark:text-white">۲۵k</span>
+                <span>شنونده فعال</span>
+              </div>
+              <div>
+                <span class="block text-2xl font-bold text-slate-800 dark:text-white">۴.۹</span>
+                <span>امتیاز کاربران</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex justify-center">
+            <div class="relative w-64 h-64 sm:w-80 sm:h-80 rounded-[2rem] bg-gradient-to-tr from-purple-600 to-indigo-600 p-2 shadow-glow transform rotate-1 hover:rotate-0 transition duration-300">
+              <div class="w-full h-full bg-slate-900 rounded-[1.5rem] flex flex-col justify-center items-center text-white p-6 text-center border border-white/10">
+                <i class="fa-solid fa-microphone-lines text-6xl text-purple-400 mb-4 animate-pulse"></i>
+                <h2 class="text-2xl font-bold">MANA CAST</h2>
+                <p class="text-xs text-slate-400 mt-2">شنیدنی‌های عمیق و کاربردی</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-12">
+        <div class="max-w-6xl mx-auto px-4">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="feature-card rounded-2xl p-6">
+              <div class="icon-box bg-purple-100 text-purple-600 dark:bg-purple-950/60 dark:text-purple-300">
+                <i class="fa-solid fa-brain"></i>
+              </div>
+              <h3 class="text-xl font-bold mt-5">توسعه فردی</h3>
+              <p class="text-slate-600 dark:text-slate-300 mt-2">
+                بررسی راهکارهای عملی برای بهبود عادات، تمرکز، و تصمیم‌گیری‌های بهتر روزانه.
+              </p>
+            </div>
+
+            <div class="feature-card rounded-2xl p-6">
+              <div class="icon-box bg-indigo-100 text-indigo-600 dark:bg-indigo-950/60 dark:text-indigo-300">
+                <i class="fa-solid fa-robot"></i>
+              </div>
+              <h3 class="text-xl font-bold mt-5">تکنولوژی</h3>
+              <p class="text-slate-600 dark:text-slate-300 mt-2">
+                فهم بهتر از ابزارهای هوش مصنوعی و نقش آن‌ها در آینده مشاغل و سبک زندگی.
+              </p>
+            </div>
+
+            <div class="feature-card rounded-2xl p-6">
+              <div class="icon-box bg-amber-100 text-amber-600 dark:bg-amber-950/60 dark:text-amber-300">
+                <i class="fa-solid fa-heart"></i>
+              </div>
+              <h3 class="text-xl font-bold mt-5">زندگی</h3>
+              <p class="text-slate-600 dark:text-slate-300 mt-2">
+                مصاحبه با افراد موفق، تجربه‌های واقعی و درس‌هایی که در زندگی کاربرد دارند.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="episodes" class="py-12 bg-slate-100/60 dark:bg-slate-800/40">
+        <div class="max-w-6xl mx-auto px-4">
+          <div class="flex justify-between items-end mb-8">
+            <div>
+              <h2 class="text-2xl font-bold">آخرین قسمت‌ها</h2>
+              <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">جدیدترین اپیزودهای منتشر شده</p>
+            </div>
+            <a href="#subscribe" class="hidden sm:inline-flex text-indigo-600 dark:text-indigo-300 font-medium">
+              دنبال‌کردن همه قسمت‌ها
+            </a>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="episode-card rounded-2xl p-5 flex flex-col justify-between">
+              <div>
+                <div class="flex justify-between items-center text-xs text-slate-400 mb-3">
+                  <span>قسمت ۱۲</span>
+                  <span>۴۵ دقیقه</span>
+                </div>
+
+                <h3 class="font-bold text-lg mb-2 hover:text-indigo-600 transition cursor-pointer">
+                  چگونه عادات روزانه کارآمد بسازیم؟
+                </h3>
+
+                <p class="text-slate-600 dark:text-slate-300 text-sm line-clamp-3 mb-4">
+                  در این قسمت به بررسی راهکارهای عملی برای ایجاد روتین‌های ماندگار، حذف عادت‌های مخرب و ساختن یک روز مؤثرتر می‌پردازیم.
+                </p>
+              </div>
+
+              <button
+                onclick="playAudio('قسمت ۱۲: عادات روزانه', 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3')"
+                class="w-full py-2.5 px-4 rounded-xl bg-indigo-50 dark:bg-slate-700/50 hover:bg-indigo-600 hover:text-white text-indigo-600 dark:text-indigo-300 font-semibold text-sm transition flex items-center justify-center gap-2"
+              >
+                <i class="fa-solid fa-play"></i>
+                <span>پخش این قسمت</span>
+              </button>
+            </div>
+
+            <div class="episode-card rounded-2xl p-5 flex flex-col justify-between">
+              <div>
+                <div class="flex justify-between items-center text-xs text-slate-400 mb-3">
+                  <span>قسمت ۱۱</span>
+                  <span>۳۸ دقیقه</span>
+                </div>
+
+                <h3 class="font-bold text-lg mb-2 hover:text-indigo-600 transition cursor-pointer">
+                  تکنولوژی و آینده مشاغل خلاقانه
+                </h3>
+
+                <p class="text-slate-600 dark:text-slate-300 text-sm line-clamp-3 mb-4">
+                  هوش مصنوعی چطور ابزارهای کاری ما را تغییر می‌دهد و چگونه باید خود را با این تحولات هماهنگ کنیم؟
+                </p>
+              </div>
+
+              <button
+                onclick="playAudio('قسمت ۱۱: تکنولوژی و آیند�� مشاغل', 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3')"
+                class="w-full py-2.5 px-4 rounded-xl bg-indigo-50 dark:bg-slate-700/50 hover:bg-indigo-600 hover:text-white text-indigo-600 dark:text-indigo-300 font-semibold text-sm transition flex items-center justify-center gap-2"
+              >
+                <i class="fa-solid fa-play"></i>
+                <span>پخش این قسمت</span>
+              </button>
+            </div>
+
+            <div class="episode-card rounded-2xl p-5 flex flex-col justify-between">
+              <div>
+                <div class="flex justify-between items-center text-xs text-slate-400 mb-3">
+                  <span>قسمت ۱۰</span>
+                  <span>۴۲ دقیقه</span>
+                </div>
+
+                <h3 class="font-bold text-lg mb-2 hover:text-indigo-600 transition cursor-pointer">
+                  راهی برای تمرکز و کاهش آشفتگی ذهنی
+                </h3>
+
+                <p class="text-slate-600 dark:text-slate-300 text-sm line-clamp-3 mb-4">
+                  تمرکز در دنیای پرهیاهو چقدر اهمیت دارد؟ در این قسمت درباره ابزارهای ساده برای کاهش آشفتگی و افزایش بهره‌وری صحبت می‌کنیم.
+                </p>
+              </div>
+
+              <button
+                onclick="playAudio('قسمت ۱۰: تمرکز و کاهش آشفتگی ذهنی', 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3')"
+                class="w-full py-2.5 px-4 rounded-xl bg-indigo-50 dark:bg-slate-700/50 hover:bg-indigo-600 hover:text-white text-indigo-600 dark:text-indigo-300 font-semibold text-sm transition flex items-center justify-center gap-2"
+              >
+                <i class="fa-solid fa-play"></i>
+                <span>پخش این قسمت</span>
+              </button>
+            </div>
+
+            <div class="episode-card rounded-2xl p-5 flex flex-col justify-between">
+              <div>
+                <div class="flex justify-between items-center text-xs text-slate-400 mb-3">
+                  <span>قسمت ۹</span>
+                  <span>۳۶ دقیقه</span>
+                </div>
+
+                <h3 class="font-bold text-lg mb-2 hover:text-indigo-600 transition cursor-pointer">
+                  چطور با انتخاب درست اولویت‌ها، زندگی را بهتر مدیریت کنیم؟
+                </h3>
+
+                <p class="text-slate-600 dark:text-slate-300 text-sm line-clamp-3 mb-4">
+                  در این قسمت درباره اهمیت اولویت‌بندی، تمرکز روی کارهای مهم و کاهش فشارهای ذهنی صحبت می‌کنیم.
+                </p>
+              </div>
+
+              <button
+                onclick="playAudio('قسمت ۹: اولویت‌بندی و مدیریت زمان', 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3')"
+                class="w-full py-2.5 px-4 rounded-xl bg-indigo-50 dark:bg-slate-700/50 hover:bg-indigo-600 hover:text-white text-indigo-600 dark:text-indigo-300 font-semibold text-sm transition flex items-center justify-center gap-2"
+              >
+                <i class="fa-solid fa-play"></i>
+                <span>پخش این قسمت</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="py-16">
+        <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-100 dark:bg-purple-950/50 text-purple-700 dark:text-purple-300 text-xs font-medium border border-purple-200 dark:border-purple-800">
+              <i class="fa-solid fa-circle-play"></i>
+              درباره مانا
+            </div>
+            <h2 class="mt-4 text-3xl font-extrabold leading-tight">پادکستی برای کسانی که می‌خواهند بهتر زندگی کنند</h2>
+            <p class="mt-4 text-slate-600 dark:text-slate-300 leading-relaxed">
+              مانا به‌عنوان یک پادکست، فضایی برای گفت‌وگوهای عمیق، تجربه‌های واقعی و ایده‌های کاربردی است. ما به دنبال این هستیم که با شنیدن و بحث درباره موضوعات مهم، ذهن‌ها را رشد دهیم و مسیر زندگی بهتر را برای شنوندگان روشن کنیم.
+            </p>
+            <div class="mt-6 flex flex-wrap gap-3">
+              <a href="#subscribe" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white transition">
+                <i class="fa-solid fa-envelope"></i>
+                <span>عضویت در خبرنامه</span>
+              </a>
+              <a href="#" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-200 dark:bg-slate-800 hover:bg-purple-100 dark:hover:bg-purple-900/30 transition">
+                <i class="fa-brands fa-spotify"></i>
+                <span>اسپاتیفای</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="rounded-3xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-6 shadow-sm">
+            <div class="space-y-4">
+              <div class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-purple-600 to-indigo-500 flex items-center justify-center text-white">
+                  <i class="fa-solid fa-quote-left"></i>
+                </div>
+                <div>
+                  <p class="font-bold">نقل قول</p>
+                  <p class="text-sm text-slate-500 dark:text-slate-400">از مهم‌ترین درس‌های زندگی</p>
+                </div>
+              </div>
+
+              <blockquote class="text-lg leading-relaxed text-slate-700 dark:text-slate-200">
+                «از همان جا که می‌خواهی شروع کنی، باید به‌سمت چیزی که می‌خواهی تبدیل شوی. رشد تنها با شروع واقعی می‌آید.»
+              </blockquote>
+
+              <div class="pt-4 border-t border-slate-200 dark:border-slate-700 flex flex-wrap gap-3 text-sm text-slate-500 dark:text-slate-400">
+                <span><i class="fa-solid fa-microphone-lines ml-1"></i>پادکست</span>
+                <span><i class="fa-solid fa-users ml-1"></i>مهمانان رو در رو</span>
+                <span><i class="fa-solid fa-star ml-1"></i>محتوای آموزشی</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="subscribe" class="py-16 bg-gradient-to-r from-purple-600 to-indigo-600 text-white">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+          <p class="text-sm uppercase tracking-[0.2em] text-purple-100">خبرنامه مانا</p>
+          <h2 class="mt-3 text-3xl font-extrabold">برای دریافت جدیدترین قسمت‌ها، عضو شو</h2>
+          <p class="mt-3 text-purple-100 max-w-2xl mx-auto">
+            آخرین خبرها، قسمت‌های جدید و محتوای ویژه را مستقیم در ایمیل خود دریافت کنید.
           </p>
 
-          <div class="pt-2 flex flex-wrap gap-3 justify-center md:justify-start">
-            <a href="#" class="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-200 dark:bg-slate-800 hover:bg-purple-100 dark:hover:bg-purple-900/30 transition text-sm font-medium">
-              <i class="fa-brands fa-spotify text-green-500 text-lg"></i>
-              <span>اسپاتیفای</span>
-            </a>
-
-            <a href="#" class="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-200 dark:bg-slate-800 hover:bg-purple-100 dark:hover:bg-purple-900/30 transition text-sm font-medium">
-              <i class="fa-solid fa-podcast text-purple-500 text-lg"></i>
-              <span>اپل پادکست</span>
-            </a>
-
-            <a href="#" class="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-200 dark:bg-slate-800 hover:bg-purple-100 dark:hover:bg-purple-900/30 transition text-sm font-medium">
-              <i class="fa-solid fa-rss text-orange-500 text-lg"></i>
-              <span>کاست‌باکس</span>
-            </a>
-          </div>
-        </div>
-
-        <div class="flex justify-center">
-          <div class="relative w-64 h-64 sm:w-80 sm:h-80 rounded-3xl bg-gradient-to-tr from-purple-600 to-indigo-600 p-2 shadow-2xl transform rotate-1 hover:rotate-0 transition duration-300">
-            <div class="w-full h-full bg-slate-900 rounded-2xl flex flex-col justify-center items-center text-white p-6 text-center border border-white/10">
-              <i class="fa-solid fa-microphone-lines text-6xl text-purple-400 mb-4 animate-pulse"></i>
-              <h2 class="text-2xl font-bold">MANA CAST</h2>
-              <p class="text-xs text-slate-400 mt-2">شنیدنی‌های عمیق و کاربردی</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="episodes" class="py-12 bg-slate-100/60 dark:bg-slate-800/40">
-      <div class="max-w-6xl mx-auto px-4">
-        <div class="flex justify-between items-end mb-8">
-          <div>
-            <h2 class="text-2xl font-bold">آخرین قسمت‌ها</h2>
-            <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">جدیدترین اپیزودهای منتشر شده</p>
-          </div>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div class="bg-white dark:bg-slate-800 rounded-2xl p-5 shadow-sm border border-slate-200 dark:border-slate-700/60 flex flex-col justify-between">
-            <div>
-              <div class="flex justify-between items-center text-xs text-slate-400 mb-3">
-                <span>قسمت ۱۲</span>
-                <span>۴۵ دقیقه</span>
-              </div>
-
-              <h3 class="font-bold text-lg mb-2 hover:text-indigo-600 transition cursor-pointer">
-                چگونه عادات روزانه کارآمد بسازیم؟
-              </h3>
-
-              <p class="text-slate-600 dark:text-slate-300 text-sm line-clamp-2 mb-4">
-                در این قسمت به بررسی راهکارهای عملی برای ایجاد روتین‌های ماندگار و حذف عادات مخرب می‌پردازیم...
-              </p>
-            </div>
-
-            <button
-              onclick="playAudio('قسمت ۱۲: عادات روزانه', 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3')"
-              class="w-full py-2.5 px-4 rounded-xl bg-indigo-50 dark:bg-slate-700/50 hover:bg-indigo-600 hover:text-white text-indigo-600 dark:text-indigo-300 font-semibold text-sm transition flex items-center justify-center gap-2"
-            >
-              <i class="fa-solid fa-play"></i>
-              <span>پخش این قسمت</span>
+          <form class="mt-8 flex flex-col sm:flex-row gap-3 max-w-xl mx-auto">
+            <input
+              type="email"
+              placeholder="ایمیل شما"
+              class="flex-1 rounded-xl border border-white/20 bg-white/10 placeholder:text-purple-100 text-white px-4 py-3 outline-none focus:ring-2 focus:ring-white/60"
+            />
+            <button type="submit" class="px-5 py-3 rounded-xl bg-white text-indigo-700 font-bold hover:bg-slate-100 transition">
+              عضویت
             </button>
-          </div>
-
-          <div class="bg-white dark:bg-slate-800 rounded-2xl p-5 shadow-sm border border-slate-200 dark:border-slate-700/60 flex flex-col justify-between">
-            <div>
-              <div class="flex justify-between items-center text-xs text-slate-400 mb-3">
-                <span>قسمت ۱۱</span>
-                <span>۳۸ دقیقه</span>
-              </div>
-
-              <h3 class="font-bold text-lg mb-2 hover:text-indigo-600 transition cursor-pointer">
-                تکنولوژی و آینده مشاغل خلاقانه
-              </h3>
-
-              <p class="text-slate-600 dark:text-slate-300 text-sm line-clamp-2 mb-4">
-                هوش مصنوعی چطور ابزارهای کاری ما را تغییر می‌دهد و چگونه باید خود را با این تحولات هماهنگ کنیم؟
-              </p>
-            </div>
-
-            <button
-              onclick="playAudio('قسمت ۱۱: تکنولوژی و آینده مشاغل', 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3')"
-              class="w-full py-2.5 px-4 rounded-xl bg-indigo-50 dark:bg-slate-700/50 hover:bg-indigo-600 hover:text-white text-indigo-600 dark:text-indigo-300 font-semibold text-sm transition flex items-center justify-center gap-2"
-            >
-              <i class="fa-solid fa-play"></i>
-              <span>پخش این قسمت</span>
-            </button>
-          </div>
+          </form>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
     <div id="playerBar" class="fixed bottom-0 left-0 right-0 glass-effect border-t border-slate-200 dark:border-slate-800 p-4 shadow-2xl transition-transform duration-300 transform translate-y-full z-40">
       <div class="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
@@ -208,48 +372,6 @@
       </div>
     </footer>
 
-    <script>
-      const themeToggle = document.getElementById('themeToggle');
-
-      function applyTheme(theme) {
-        const root = document.documentElement;
-        if (theme === 'dark') {
-          root.classList.add('dark');
-        } else {
-          root.classList.remove('dark');
-        }
-        localStorage.setItem('theme', theme);
-      }
-
-      function initTheme() {
-        const savedTheme = localStorage.getItem('theme');
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-        if (savedTheme) {
-          applyTheme(savedTheme);
-        } else {
-          applyTheme(prefersDark ? 'dark' : 'light');
-        }
-      }
-
-      themeToggle.addEventListener('click', () => {
-        const isDark = document.documentElement.classList.contains('dark');
-        applyTheme(isDark ? 'light' : 'dark');
-      });
-
-      initTheme();
-
-      function playAudio(title, url) {
-        const playerBar = document.getElementById('playerBar');
-        const playerTitle = document.getElementById('playerTitle');
-        const audioElement = document.getElementById('audioElement');
-
-        playerTitle.innerText = title;
-        audioElement.src = url;
-        audioElement.load();
-        playerBar.classList.remove('translate-y-full');
-        audioElement.play();
-      }
-    </script>
+    <script src="assets/script.js"></script>
   </body>
 </html>
